@@ -20,20 +20,21 @@ export const metadata: Metadata = {
   creator: "FitForge Personal Training",
   publisher: "FitForge",
   
-  // Open Graph (Facebook, LinkedIn)
+  // Open Graph (Facebook, LinkedIn, WhatsApp)
   openGraph: {
     type: "website",
     locale: "he_IL",
-    url: "https://fitforge.co.il",
+    url: "https://fitforge-app.netlify.app",
     title: "FitForge - ליצור את הכושר שלך | מאמן כושר אישי בתל אביב",
     description: "שילוב מושלם של אימוני כוח וקליסטניקס לתוצאות מקסימליות. 500+ לקוחות מרוצים, 98% שביעות רצון. התחל היום!",
     siteName: "FitForge",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&fit=crop",
+        url: "https://fitforge-app.netlify.app/og-image-fitforge.jpg",
         width: 1200,
         height: 630,
-        alt: "FitForge - מאמן כושר אישי",
+        alt: "FitForge - מאמן כושר אישי בתל אביב",
+        type: "image/jpeg",
       },
     ],
   },
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FitForge - ליצור את הכושר שלך",
     description: "שילוב ייחודי של חדר כושר וקליסטניקס. אימון ניסיון חינם!",
-    images: ["https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&fit=crop"],
+    images: ["https://fitforge-app.netlify.app/og-image-fitforge.jpg"],
   },
 
   // Robots
@@ -62,8 +63,6 @@ export const metadata: Metadata = {
   // Verification
   verification: {
     google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
   },
 
   // Additional
@@ -85,10 +84,10 @@ export const metadata: Metadata = {
 
   // Alternate languages
   alternates: {
-    canonical: "https://fitforge.co.il",
+    canonical: "https://fitforge-app.netlify.app",
     languages: {
-      "he-IL": "https://fitforge.co.il",
-      "en-US": "https://fitforge.co.il/en",
+      "he-IL": "https://fitforge-app.netlify.app",
+      "en-US": "https://fitforge-app.netlify.app/en",
     },
   },
 };
@@ -108,10 +107,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "@id": "https://fitforge.co.il",
+              "@id": "https://fitforge-app.netlify.app",
               name: "FitForge",
               description: "מאמן כושר אישי - שילוב של חדר כושר וקליסטניקס",
-              url: "https://fitforge.co.il",
+              url: "https://fitforge-app.netlify.app",
               telephone: "+972-50-123-4567",
               email: "info@fitforge.co.il",
               address: {
@@ -126,7 +125,7 @@ export default function RootLayout({
                 latitude: "32.0853",
                 longitude: "34.7818",
               },
-              image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&fit=crop",
+              image: "https://fitforge-app.netlify.app/og-image-fitforge.jpg",
               priceRange: "₪₪",
               openingHoursSpecification: [
                 {
