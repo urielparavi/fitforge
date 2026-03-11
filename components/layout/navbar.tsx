@@ -56,7 +56,7 @@ export const Navbar = () => {
               <NavigationMenuLink asChild>
                 <a
                   href={href}
-                  className="inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                  className="inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-primary focus:bg-accent focus:text-primary"
                 >
                   {label}
                 </a>
@@ -99,7 +99,7 @@ export const Navbar = () => {
                   key={label}
                   href={href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-end py-3 px-2 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className="flex items-center justify-end py-3 px-2 rounded-md text-sm font-medium hover:bg-accent hover:text-primary transition-colors"
                 >
                   {label}
                 </a>

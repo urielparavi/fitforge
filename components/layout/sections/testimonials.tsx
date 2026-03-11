@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -14,6 +15,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Star } from "lucide-react";
@@ -78,8 +80,22 @@ const reviewList: ReviewProps[] = [
 ];
 
 export const TestimonialSection = () => {
+  const [api, setApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!api) return;
+    const interval = setInterval(() => api.scrollNext(), 4000);
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
-    <section id="testimonials" className="container py-24 sm:py-32">
+    <section
+      id="testimonials"
+      className="relative py-24 sm:py-32 bg-cover bg-center mx-4 sm:mx-6 rounded-[2.5rem] overflow-hidden"
+      style={{ backgroundImage: "url('/images/bg-testimonials.webp')" }}
+    >
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="container relative z-10">
       <ScrollReveal className="text-center mb-8">
         <div>
           <div className="flex items-center justify-center gap-4 mb-2">
@@ -87,10 +103,10 @@ export const TestimonialSection = () => {
             <span className="text-base font-semibold tracking-widest uppercase shimmer-text">המלצות</span>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary/40" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             מה הלקוחות אומרים
           </h2>
-          <h3 className="md:w-1/2 mx-auto text-xl text-muted-foreground">
+          <h3 className="md:w-1/2 mx-auto text-xl text-white/75">
             מאות לקוחות מרוצים שינו את חייהם עם FitForge
           </h3>
         </div>
@@ -100,7 +116,9 @@ export const TestimonialSection = () => {
         opts={{
           align: "start",
           direction: "rtl",
+          loop: true,
         }}
+        setApi={setApi}
         className="relative w-[80%] sm:w-[90%] lg:w-full mx-auto"
       >
         <CarouselContent>
@@ -109,7 +127,7 @@ export const TestimonialSection = () => {
               key={review.name}
               className="md:basis-1/2 lg:basis-1/3"
             >
-              <Card className="bg-muted/50 dark:bg-card h-full card-lift">
+              <Card className="bg-card h-full card-lift">
                 <CardContent className="pt-6 pb-0">
                   <div className="flex gap-1 pb-6 justify-end">
                     {Array.from({ length: review.rating }).map((_, i) => (
@@ -152,6 +170,7 @@ export const TestimonialSection = () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+      </div>
     </section>
   );
 };

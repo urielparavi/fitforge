@@ -84,7 +84,13 @@ export const ContactSection = () => {
   }
 
   return (
-    <section id="contact" className="container py-24 sm:py-32">
+    <section
+      id="contact"
+      className="relative py-24 sm:py-32 bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/bg-contact.webp')" }}
+    >
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="container relative z-10">
       <ScrollReveal className="text-center mb-8">
         <div>
           <div className="flex items-center justify-center gap-4 mb-2">
@@ -92,10 +98,10 @@ export const ContactSection = () => {
             <span className="text-base font-semibold tracking-widest uppercase shimmer-text">התחל היום</span>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary/40" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             קבל אימון ניסיון חינם
           </h2>
-          <h3 className="text-xl text-muted-foreground">
+          <h3 className="text-xl text-white/75">
             השאר פרטים ונחזור אליך תוך 24 שעות לתיאום האימון הראשון שלך.
           </h3>
         </div>
@@ -261,9 +267,9 @@ export const ContactSection = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <Dumbbell className="size-8 text-primary" />
-              <h3 className="text-2xl font-bold">FitForge</h3>
+              <h3 className="text-2xl font-bold text-white">FitForge</h3>
             </div>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-white/75 mb-8">
               שילוב ייחודי של חדר כושר וקליסטניקס לתוצאות מקסימליות. המקום
               שבו אתה בונה את הגרסה הטובה ביותר של עצמך.
             </p>
@@ -280,8 +286,8 @@ export const ContactSection = () => {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">{label}</p>
-                  <p className="font-medium">{value}</p>
+                  <p className="text-sm text-white/60">{label}</p>
+                  <p className="font-medium text-white">{value}</p>
                 </div>
               </div>
             ))}
@@ -299,6 +305,7 @@ export const ContactSection = () => {
             </Badge>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
