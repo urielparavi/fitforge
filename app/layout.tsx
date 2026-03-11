@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "FitForge",
     images: [
       {
-        url: "https://fitforge-app.netlify.app/og-image-fitforge.jpg",
+        url: "https://fitforge-app.netlify.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "FitForge - מאמן כושר אישי בתל אביב",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FitForge - ליצור את הכושר שלך",
     description: "שילוב ייחודי של חדר כושר וקליסטניקס. אימון ניסיון חינם!",
-    images: ["https://fitforge-app.netlify.app/og-image-fitforge.jpg"],
+    images: ["https://fitforge-app.netlify.app/og-image.jpg"],
   },
 
   // Robots
@@ -127,7 +127,7 @@ export default function RootLayout({
                 latitude: "32.0853",
                 longitude: "34.7818",
               },
-              image: "https://fitforge-app.netlify.app/og-image-fitforge.jpg",
+              image: "https://fitforge-app.netlify.app/og-image.jpg",
               priceRange: "₪₪",
               openingHoursSpecification: [
                 {
