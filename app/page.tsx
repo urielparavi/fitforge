@@ -1,27 +1,34 @@
-import BackgroundElements from '../components/BackgroundElements';
-import Navigation from '../components/Navigation';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Services from '../components/Services';
-import BeforeAfter from '../components/BeforeAfter';
-import Pricing from '../components/Pricing';
-import Testimonials from '../components/Testimonials';
-import ContactFormWithModal from '../components/ContactFormWithModal';
-import Footer from '../components/Footer';
+import { Navbar } from "@/components/layout/navbar";
+import { HeroSection } from "@/components/layout/sections/hero";
+import { SponsorsSection } from "@/components/layout/sections/sponsors";
+import { BenefitsSection } from "@/components/layout/sections/benefits";
+import { FeaturesSection } from "@/components/layout/sections/features";
+import { ServicesSection } from "@/components/layout/sections/services";
+import { BeforeAfterSection } from "@/components/layout/sections/before-after";
+import { TestimonialSection } from "@/components/layout/sections/testimonials";
+import { PricingSection } from "@/components/layout/sections/pricing";
+import { FAQSection } from "@/components/layout/sections/faq";
+import { ContactSection } from "@/components/layout/sections/contact";
+import { FooterSection } from "@/components/layout/sections/footer";
 
 export default function FitForgeLanding() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
-      <BackgroundElements />
-      <Navigation />
-      <Hero />
-      <About />
-      <Services />
-      <BeforeAfter />
-      <Pricing />
-      <Testimonials />
-      <ContactFormWithModal />
-      <Footer />
-    </div>
+    <>
+      <Navbar />
+      <HeroSection />
+      <SponsorsSection />
+      <div className="gradient-divider mx-auto w-[80%] max-w-4xl" />
+      <BenefitsSection />
+      <FeaturesSection />
+      <ServicesSection />
+      <div className="gradient-divider mx-auto w-[80%] max-w-4xl" />
+      <BeforeAfterSection />
+      <TestimonialSection />
+      <PricingSection />
+      <div className="gradient-divider mx-auto w-[80%] max-w-4xl" />
+      <FAQSection />
+      <ContactSection />
+      <FooterSection />
+    </>
   );
 }
