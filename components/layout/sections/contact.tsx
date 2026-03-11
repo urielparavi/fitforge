@@ -109,7 +109,7 @@ export const ContactSection = () => {
 
       <div className="grid md:grid-cols-2 gap-8">
         {/* Form — RIGHT column in RTL (first in DOM = rightmost in RTL grid) */}
-        <Card className="bg-muted/60 dark:bg-card border-primary/20 shadow-[0_0_30px_hsl(var(--primary)/0.08)]">
+        <Card className="bg-card border-primary/20 shadow-[0_0_30px_hsl(var(--primary)/0.08)]">
           <CardHeader>
             <CardTitle className="text-right">פרטים ליצירת קשר</CardTitle>
           </CardHeader>
