@@ -37,7 +37,13 @@ const benefitList: BenefitProps[] = [
 
 export const BenefitsSection = () => {
   return (
-    <section id="benefits" className="container py-24 sm:py-32">
+    <section
+      id="benefits"
+      className="relative py-24 sm:py-32 bg-cover bg-center mx-4 sm:mx-6 rounded-[2.5rem] overflow-hidden"
+      style={{ backgroundImage: "url('/images/bg-benefits.webp')" }}
+    >
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="container relative z-10">
       <div className="grid lg:grid-cols-2 place-items-center lg:gap-24">
         <ScrollReveal>
           <div>
@@ -46,10 +52,10 @@ export const BenefitsSection = () => {
               <span className="text-base font-semibold tracking-widest uppercase shimmer-text">יתרונות</span>
               <div className="h-px w-10 bg-gradient-to-l from-transparent to-primary/40" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               למה לבחור ב-FitForge?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-white/75 mb-8">
               שילוב ייחודי של אימוני כוח מסורתיים בחדר הכושר עם אימוני קליסטניקס
               מתקדמים. זו לא סתם אימון — זו יצירת הגוף שלך מחדש.
             </p>
@@ -59,7 +65,7 @@ export const BenefitsSection = () => {
         <div className="grid lg:grid-cols-2 gap-4 w-full">
           {benefitList.map(({ icon: Icon, title, description }, index) => (
             <ScrollReveal key={title} delay={(index % 4) as 0 | 1 | 2 | 3 | 4}>
-              <Card className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number card-lift h-full">
+              <Card className="bg-card hover:bg-background transition-all delay-75 group/number card-lift h-full">
                 <CardHeader>
                   <div className="flex justify-between">
                     <Icon
@@ -79,6 +85,7 @@ export const BenefitsSection = () => {
             </ScrollReveal>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );
