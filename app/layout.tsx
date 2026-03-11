@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/layout/theme-provider";
 
 export const metadata: Metadata = {
   title: "FitForge - מאמן כושר אישי | חדר כושר וקליסטניקס בתל אביב",
@@ -98,7 +100,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl">
+    <html lang="he" dir="rtl" suppressHydrationWarning>
       <head>
         {/* JSON-LD Schema Markup for Local Business */}
         <script
@@ -177,8 +179,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">
-        {children}
+      <body className={cn("min-h-screen bg-background text-foreground antialiased")}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
