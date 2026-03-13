@@ -142,19 +142,19 @@ export const TestimonialSection = () => {
           className="relative overflow-hidden w-full"
           style={{
             "--gap": "1.5rem",
-            "--duration": "35s",
+            "--duration": "45s",
             maskImage:
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
             WebkitMaskImage:
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           } as React.CSSProperties}
         >
-          <div className="group flex" style={{ gap: "var(--gap)" }}>
+          <div className="flex" style={{ gap: "var(--gap)" }}>
             {[0, 1].map((set) => (
               <div
                 key={set}
                 aria-hidden={set === 1}
-                className="flex shrink-0 animate-marquee group-hover:[animation-play-state:paused]"
+                className="flex shrink-0 animate-marquee"
                 style={{ gap: "var(--gap)" }}
               >
                 {reviewList.map((review) => (
